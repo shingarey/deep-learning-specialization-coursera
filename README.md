@@ -1,7 +1,7 @@
 # Deep Learning Specialization on Coursera
 Become a Machine Learning expert. Master the fundamentals of deep learning and break into AI. Recently updated with cutting-edge techniques!
 
-## About this Specializatio
+## About this Specialization
 
 [The Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) is a foundational program that will help you understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology. 
 
@@ -22,3 +22,19 @@ By the end you’ll be able to:
 • Build a Convolutional Neural Network, apply it to visual detection and recognition tasks, use neural style transfer to generate art, and apply these algorithms to image, video, and other 2D/3D data
 
 • Build and train Recurrent Neural Networks and its variants (GRUs, LSTMs), apply RNNs to character-level language modeling, work with NLP and Word Embeddings, and use HuggingFace tokenizers and transformers to perform Named Entity Recognition and Question Answering
+
+## Run code
+
+Create and activate conda environment:
+```sh
+conda create -n deep-learning-specialization-coursera python=3.10
+conda activate deep-learning-specialization-coursera
+```
+
+Install
+
+```sh
+sudo apt-get install python3-h5py
+pip3 install -r requirements.txt
+
+```
