@@ -13,6 +13,7 @@ class MNIST_Logistic_Regression(nn.Module):
         self.layer1 = nn.Linear(64*64*3, 100)
         torch.nn.init.xavier_uniform(self.layer1.weight)
         self.act1 = nn.ReLU()
+        self.dropout1 = nn.Dropout(0.4)  # Add dropout
         self.layer2 = nn.Linear(100, 20)
         torch.nn.init.xavier_uniform(self.layer2.weight)
         self.act2 = nn.ReLU()
@@ -81,6 +82,7 @@ model = MNIST_Logistic_Regression().to(device)
 criterion = nn.BCELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.00075)
 
+model.train()
 # Iterate through train set minibatchs
 for _ in tqdm(range(10000)):
     for data, labels in train_loader:
@@ -96,15 +98,19 @@ for _ in tqdm(range(10000)):
            # Backward pass
            loss.backward()
            optimizer.step()
-    if _ % 100 == 0:      
+    if _ % 100 == 0:     
+        model.eval()
         print(loss.item())
         yp = (y > 0.5).float()
         correct = torch.sum((yp == labels.float().unsqueeze(1)).float())
         print("Test accuracy: {}".format(correct/len(labels)))
+        model.train()
 
 ## Testing
 correct = 0
 total = len(test_dataset)
+
+model.eval()
 
 with torch.no_grad():
     # Iterate through test set minibatchs
