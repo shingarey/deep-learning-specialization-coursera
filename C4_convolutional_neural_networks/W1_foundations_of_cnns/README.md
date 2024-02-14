@@ -53,3 +53,81 @@ These pooling layers have no parameters for backpropagation to train. However, t
     This transforms the input volume into an output volume of different size
 - Zero padding helps keep more information at the image borders, and is helpful for building deeper networks, because you can build a CONV layer without shrinking the height and width of the volumes
 - Pooling layers gradually reduce the height and width of the input by sliding a 2D window over each specified region, then summarizing the features in that region
+
+### Keras
+
+
+#### Sequential API
+TF Keras' Sequential API, which allows you to build layer by layer, and is ideal for building models where each layer has exactly one input tensor and one output tensor.
+
+create a model:
+
+```python
+happyModel()
+    """
+    Implements the forward propagation for the binary classification model:
+    ZEROPAD2D -> CONV2D -> BATCHNORM -> RELU -> MAXPOOL -> FLATTEN -> DENSE
+    
+    Note that for simplicity and grading purposes, you'll hard-code all the values
+    such as the stride and kernel (filter) sizes. 
+    Normally, functions should take these values as function parameters.
+    
+    Arguments:
+    None
+
+    Returns:
+    model -- TF Keras model (object containing the information for the entire training process) 
+    """
+    input_shape = (64, 64, 3)
+    model = tf.keras.Sequential([
+            ## ZeroPadding2D with padding 3, input shape of 64 x 64 x 3
+            
+            ## Conv2D with 32 7x7 filters and stride of 1
+            
+            ## BatchNormalization for axis 3
+            
+            ## ReLU
+            
+            ## Max Pooling 2D with default parameters
+            
+            ## Flatten layer
+            
+            ## Dense layer with 1 unit for output & 'sigmoid' activation
+
+            tfl.InputLayer(input_shape=input_shape),
+            tfl.ZeroPadding2D(padding=3),
+            tfl.Conv2D(32, 7),
+            tfl.BatchNormalization(axis=3),
+            tfl.ReLU(),
+            tfl.MaxPooling2D(),
+            tfl.Flatten(),
+            tfl.Dense(1, activation='sigmoid')
+
+        ])
+```
+
+Create. compile, train and evaluate model:
+
+```python
+#create model
+happy_model = happyModel()
+
+#compile model
+happy_model.compile(optimizer='adam',
+                   loss='binary_crossentropy',
+                   metrics=['accuracy'])
+
+# train model
+happy_model.fit(X_train, Y_train, epochs=10, batch_size=16)
+
+#evaluate
+happy_model.evaluate(X_test, Y_test)
+```
+
+#### The Functional API
+
+The Functional API can handle models with non-linear topology, shared layers, as well as layers with multiple inputs or outputs. Imagine that, where the Sequential API requires the model to move in a linear fashion through its layers, the Functional API allows much more flexibility. Where Sequential is a straight line, a Functional model is a graph, where the nodes of the layers can connect in many more ways than one. 
+
+one possible direction of the movement Sequential model is shown in contrast to a skip connection, which is just one of the many ways a Functional model can be constructed
+
+

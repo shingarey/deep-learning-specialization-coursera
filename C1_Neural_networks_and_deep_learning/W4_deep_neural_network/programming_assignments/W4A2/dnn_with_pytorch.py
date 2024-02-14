@@ -10,14 +10,15 @@ from tqdm import tqdm
 class MNIST_Logistic_Regression(nn.Module):
     def __init__(self):
         super().__init__()
-        self.layer1 = nn.Linear(64*64*3, 100)
+        self.layer1 = nn.Linear(64*64*3, 200)
         torch.nn.init.xavier_uniform(self.layer1.weight)
         self.act1 = nn.ReLU()
-        self.dropout1 = nn.Dropout(0.4)  # Add dropout
-        self.layer2 = nn.Linear(100, 20)
+        self.dropout1 = nn.Dropout(0.8)  # Add dropout
+        self.layer2 = nn.Linear(200, 50)
         torch.nn.init.xavier_uniform(self.layer2.weight)
         self.act2 = nn.ReLU()
-        self.layer3 = nn.Linear(20, 5)
+        self.dropout1 = nn.Dropout(0.4)  # Add dropout
+        self.layer3 = nn.Linear(50, 5)
         torch.nn.init.xavier_uniform(self.layer3.weight)
         self.act3 = nn.ReLU()
         self.output = nn.Linear(5, 1)
@@ -80,11 +81,12 @@ model = MNIST_Logistic_Regression().to(device)
 # Loss and Optimizer
 #criterion = nn.CrossEntropyLoss()
 criterion = nn.BCELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.00075)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.00075, momentum=0.9)  # Set momentum to 0.9
+#optimizer = torch.optim.AdamW(model.parameters(), lr=0.00075, betas=(0.9, 0.999), eps=1e-08, weight_decay=0.01, amsgrad=False) 
 
 model.train()
 # Iterate through train set minibatchs
-for _ in tqdm(range(10000)):
+for _ in tqdm(range(5000)):
     for data, labels in train_loader:
            # Zero out the gradients
            optimizer.zero_grad()
