@@ -38,3 +38,12 @@ sudo apt-get install python3-h5py
 pip3 install -r requirements.txt
 
 ```
+
+
+## ToDo
+
+### C4W1A1 - Convolutional Neural Networks
+- Implement optional programming assignment for backpropagation for CNN
+
+### C5W1A1 - Building your Recurrent Neural Network 
+- Implement optional programming assignment for backpropagation for RNN and LSTM
