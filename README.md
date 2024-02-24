@@ -47,3 +47,6 @@ pip3 install -r requirements.txt
 
 ### C5W1A1 - Building your Recurrent Neural Network 
 - Implement optional programming assignment for backpropagation for RNN and LSTM
+
+### C5W2A1 - Operations_on_word_vectors
+- Debiasing Word Vectors (OPTIONAL/UNGRADED)

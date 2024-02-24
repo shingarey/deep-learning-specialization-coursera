@@ -1,6 +1,6 @@
-# Foundations of Convolutional Neural Networks
+# Foundations of Sequence Models
 
-This repository contains the code and materials for the "Foundations of Convolutional Neural Networks" course in the Deep Learning Specialization on Coursera.
+In the fifth course of the Deep Learning Specialization, you will become familiar with sequence models and their exciting applications such as speech recognition, music synthesis, chatbots, machine translation, natural language processing (NLP), and more. 
 
 ## About
 
@@ -43,6 +43,15 @@ What you should remember:
     - A hidden state
     - A prediction
 
+- Very large, or "exploding" gradients updates can be so large that they "overshoot" the optimal values during back prop -- making training difficult
+    - Clip gradients before updating the parameters to avoid exploding gradients
+- Sampling is a technique you can use to pick the index of the next character according to a probability distribution.
+    - To begin character-level sampling:
+        Input a "dummy" vector of zeros as a default input
+        Run one step of forward propagation to get 𝑎⟨1⟩ (your first character) and 𝑦̂ ⟨1⟩ (probability distribution for the following character)
+        When sampling, avoid generating the same result each time given the starting letter (and make your names more interesting!) by using np.random.choice
+
+
 ### Long Short-Term Memory (LSTM) Network
 
 What you should remember:
@@ -56,4 +65,6 @@ What you should remember:
         - When a unit in the update gate is close to 1, the value of its candidate is passed on to the hidden state.
         - When a unit in the update gate is close to 0, it's prevented from being passed onto the hidden state.
     - And an output gate, which decides what gets sent as the output of the time step 
+
+
 
