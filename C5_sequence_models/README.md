@@ -1,4 +1,4 @@
-# Foundations of Sequence Models
+# Sequence Models
 
 ## About
 

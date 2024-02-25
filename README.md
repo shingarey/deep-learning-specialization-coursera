@@ -9,6 +9,14 @@ In this Specialization, you will build and train neural network architectures su
 
 AI is transforming many industries. The Deep Learning Specialization provides a pathway for you to take the definitive step in the world of AI by helping you gain the knowledge and skills to level up your career. Along the way, you will also get career advice from deep learning experts from industry and academia.
 
+[Course 1 - Neural Networks and Deep Learning (Notes and Solutions)](C1_Neural_networks_and_deep_learning)
+
+[Course 2 - Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization (Notes and Solutions)](C2_Improving_deep_neural_networks)
+
+[Course 4 - Convolutional Neural Networks (Notes and Solutions)](C4_convolutional_neural_networks)
+
+[Course 5 - Sequence Models)](C5_sequence_models)
+
 ## Applied Learning Project
 
 By the end you’ll be able to:
