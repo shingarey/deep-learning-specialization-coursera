@@ -10,3 +10,4 @@ C4_convolutional_neural_networks/W4_space_recognition_and_neural_style_transfer/
 C4_convolutional_neural_networks/W4_space_recognition_and_neural_style_transfer/programming_assignments/W4A2/pretrained-model/imagenet-vgg-verydeep-19.mat filter=lfs diff=lfs merge=lfs -text
 C4_convolutional_neural_networks/W4_space_recognition_and_neural_style_transfer/programming_assignments/W4A2/pretrained-model/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5 filter=lfs diff=lfs merge=lfs -text 
 C4_convolutional_neural_networks/W4_space_recognition_and_neural_style_transfer/programming_assignments/W4A2/pretrained-model/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5 filter=lfs diff=lfs merge=lfs -text
+C5_sequence_models/W2_NLP_and_word_embeddings/programming_assignments/W2A2/data/glove.6B.50d.txt filter=lfs diff=lfs merge=lfs -text
