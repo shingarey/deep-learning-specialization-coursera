@@ -58,3 +58,6 @@ pip3 install -r requirements.txt
 
 ### C5W2A1 - Operations_on_word_vectors
 - Debiasing Word Vectors (OPTIONAL/UNGRADED)
+
+### C5W3A2 - Trigger_word_detection_v2a
+- 4 - Try Your Own Example locally (OPTIONAL/UNGRADED)
